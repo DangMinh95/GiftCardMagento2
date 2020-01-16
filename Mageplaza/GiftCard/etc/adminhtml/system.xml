@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="giftcard2" translate="label" sortOrder="10">
+            <label>GiftCard</label>
+        </tab>
+        <section id="giftcard" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Gift Card</label>
+            <tab>giftcard2</tab>
+            <resource>Mageplaza_GiftCard::gift_configuration</resource>
+            <group id="general1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Gift Card Configuration 1</label>
+
+                <field id="enable_gift_card" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Gift Card</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Nếu field này là NO, toàn bộ các tính năng của module ngoài frontend sẽ không hoạt động</comment>
+                </field>
+
+                <field id="allow_used" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow used Gift Card at Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Nếu field này là NO, customer sẽ không thể apply gift code</comment>
+                </field>
+
+                <field id="allow_redeem" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Redeem Gift Card</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>có cho phép customer chuyển amount của gift code vào trong balance của mình hay không</comment>
+                </field>
+
+            </group>
+
+            <group id="general2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Gift Card Configuration 2</label>
+
+                <field id="code_length" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Code Length</label>
+                    <comment>độ dài mặc định của gift code khi tạo gift code trong admin hoặc khi customer mua sản phẩm gift card</comment>
+                    <validate>validate-number required-entry validate-zero-or-greater</validate>
+                </field>
+
+            </group>
+        </section>
+        <tab id="test" translate="label" sortOrder="20">
+            <label>Test</label>
+        </tab>
+        <section id="test" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Test</label>
+            <tab>test</tab>
+            <resource>Mageplaza_GiftCard::gift_configuration</resource>
+            <group id="general1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Test Config</label>
+
+                <field id="code_length" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Code Length</label>
+                    <comment>độ dài mặc định của gift code khi tạo gift code trong admin hoặc khi customer mua sản phẩm gift card</comment>
+                    <validate>validate-number required-entry validate-zero-or-greater</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

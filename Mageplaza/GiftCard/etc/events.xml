@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_success">
+        <observer name="buying_vitural" instance="Mageplaza\GiftCard\Observer\BuyingProduct" />
+    </event>
+    <event name="controller_action_predispatch_checkout_cart_couponPost">
+        <observer name="check_code" instance="Mageplaza\GiftCard\Observer\CheckCode" />
+    </event>
+</config>

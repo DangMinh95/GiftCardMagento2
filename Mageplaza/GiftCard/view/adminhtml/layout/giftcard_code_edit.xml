@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Mageplaza\GiftCard\Block\Adminhtml\Code\Edit" name="mageplaza_giftcard_code_edit"/>
+        </referenceContainer>
+
+        <referenceContainer name="left">
+            <block class="Mageplaza\GiftCard\Block\Adminhtml\Code\Edit\Tabs" name="mageplaza_giftcard_code_tabs">
+                <block class="Mageplaza\GiftCard\Block\Adminhtml\Code\Edit\Tab\Code" name="mageplaza_giftcard_code_edit_tab_code"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">code</argument>
+                    <argument name="block" xsi:type="string">mageplaza_giftcard_code_edit_tab_code</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
